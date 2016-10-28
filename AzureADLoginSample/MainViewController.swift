@@ -15,6 +15,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    ///
+    /// Login Azure ADボタンを押した
+    ///
     @IBAction func didTapLoginButton(sender: Any) {
         let apiClient = AzureGraphAPIClient()
         apiClient.getToken(parent: self) { (userInformation, error) in
@@ -34,7 +37,10 @@ class MainViewController: UIViewController {
         }
     }
 
-    @IBAction func didTapGetUserButton(sender: Any) {
+    ///
+    /// Get Usersボタンを押した
+    ///
+    @IBAction func didTapGetUsersButton(sender: Any) {
         let apiClient = AzureGraphAPIClient()
         apiClient.getUser { (users, error) in
             var text = ""
@@ -48,6 +54,9 @@ class MainViewController: UIViewController {
         }
     }
 
+    ///
+    /// Clear Login Cacheボタンを押した
+    ///
     @IBAction func didTapClearLoginCacheButton(sender: Any) {
         let apiClient = AzureGraphAPIClient()
         apiClient.clearTokenCache()

@@ -35,9 +35,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYW-Wo-ay8">
-                                <state key="normal" title="Get User"/>
+                                <state key="normal" title="Get Users"/>
                                 <connections>
-                                    <action selector="didTapGetUserButtonWithSender:" destination="ma0-Gg-ZKQ" eventType="touchUpInside" id="y1l-P4-wbx"/>
+                                    <action selector="didTapGetUsersButtonWithSender:" destination="ma0-Gg-ZKQ" eventType="touchUpInside" id="4b2-zG-2pT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y88-aj-gNW">

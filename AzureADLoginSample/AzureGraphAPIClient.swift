@@ -74,6 +74,8 @@ class AzureGraphAPIClient: NSObject {
 
     ///
     /// ユーザー情報を取得する
+    /// Azure AD Graph APIのリファレンスはこちら
+    /// https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog
     ///
     func getUser(_ completeHandler: @escaping (([User], Error?) -> Void)) {
         let config = AzureConfig.shared
@@ -82,11 +84,19 @@ class AzureGraphAPIClient: NSObject {
         }
 
         var error: NSError?
+
+        //
+        // Graph APIのURLおよびURLRequestを生成
+        // https://graph.windows.net/myorganization/users?api-version[&$filter]
+        //
         let params = NSMutableDictionary()
         params.setObject(config.graphApiVersion, forKey: "api-version" as NSString)
         let ser = AFHTTPRequestSerializer()
         let graphURL = config.graphApiUrlString + "users"
         let request = ser.request(withMethod: "GET", urlString: graphURL, parameters: params, error:&error)
+        //
+        // Authorizationヘッダにアクセストークンを渡す
+        //
         let header = "Bearer \(config.accessToken!)"
         request.setValue(header, forHTTPHeaderField:"Authorization")
 
