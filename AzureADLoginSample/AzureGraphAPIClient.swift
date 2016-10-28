@@ -39,7 +39,7 @@ class AzureGraphAPIClient: NSObject {
             withResource: config.resourceId,
             clientId: config.clientId,
             redirectUri: redirectUri,
-            promptBehavior: AD_PROMPT_AUTO,
+            promptBehavior: config.useLoginCacheForNext ? AD_PROMPT_AUTO : AD_PROMPT_ALWAYS,
             userId: initialUserId,
             extraQueryParameters: "nux=1", // if this strikes you as strange it was legacy to display the correct mobile UX. You most likely won't need it in your code.
             completionBlock: { (result) in
@@ -49,6 +49,7 @@ class AzureGraphAPIClient: NSObject {
                 if result!.status != AD_SUCCEEDED {
                     completionBlock(nil, result!.error)
                 } else {
+                    config.useLoginCacheForNext = true
                     config.accessToken = result!.tokenCacheItem.accessToken
                     completionBlock(result!.tokenCacheItem.userInformation, nil)
                 }

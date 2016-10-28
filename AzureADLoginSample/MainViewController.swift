@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
     /// Clear Login Cacheボタンを押した
     ///
     @IBAction func didTapClearLoginCacheButton(sender: Any) {
-        let apiClient = AzureGraphAPIClient()
-        apiClient.clearTokenCache()
+        let config = AzureConfig.shared
+        config.useLoginCacheForNext = false
     }
 }
