@@ -1,0 +1,45 @@
+//
+//  AzureConfig.swift
+//  AzureADLoginSample
+//
+//  Created by EIMEI on 2016/10/27.
+//  Copyright © 2016 Stack3. All rights reserved.
+//
+// このファイルをAzureConfig.swiftにRenameしてください
+
+import UIKit
+
+class AzureConfig: NSObject {
+    /// Azure Portalで表示されるアプリケーションID
+    let clientId = "TODO"
+    /// 空で良い？
+    let clientSecret = ""
+    ///Azure Portalで表示されるWS-FEDERATION サインオン エンドポイント
+    let authority = "https://login.windows.net/TODO/wsfed"
+    /// Graph APIのホスト名でよい
+    let resourceId = "https://graph.windows.net"
+    /// Azure Portalで表示されるMICROSOFT AZURE AD GRAPH API エンドポイント
+    let graphApiUrlString = "https://graph.windows.net/TODO/"
+    /// Graph APIのバージョン
+    let graphApiVersion = "1.6"
+    /// ログイン情報をキャッシュするキーチェーン
+    /// BundleIdentifierと同じにしているが、自由に変えてよい
+    var keychain: String {
+        return Bundle.main.bundleIdentifier!
+    }
+    /// OAuth認証のリダイレクトURL
+    /// Info.plistのURL typesにも記述すること
+    let redirectUriString = "stazureadloginsample://auth-callback"
+    var adUserInformation: ADUserInformation?
+    var accessToken: String?
+
+    static var shared: AzureConfig {
+        struct Static {
+            static let instance = AzureConfig()
+        }
+        return Static.instance
+    }
+
+    override init() {
+    }
+}

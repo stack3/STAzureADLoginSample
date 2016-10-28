@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ma0-Gg-ZKQ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="FwW-pj-WDt">
+            <objects>
+                <viewController id="ma0-Gg-ZKQ" customClass="MainViewController" customModule="AzureADLoginSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WBF-zm-QTC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xuy-YF-K9U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f1T-E9-Cam">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9gH-ys-RvL">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cx-9S-64O">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gg-4p-eH0">
+                                <state key="normal" title="Login to Azure AD"/>
+                                <connections>
+                                    <action selector="didTapLoginButtonWithSender:" destination="ma0-Gg-ZKQ" eventType="touchUpInside" id="0wO-os-URs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYW-Wo-ay8">
+                                <state key="normal" title="Get User"/>
+                                <connections>
+                                    <action selector="didTapGetUserButtonWithSender:" destination="ma0-Gg-ZKQ" eventType="touchUpInside" id="y1l-P4-wbx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y88-aj-gNW">
+                                <state key="normal" title="Clear Login Cache"/>
+                                <connections>
+                                    <action selector="didTapClearLoginCacheButtonWithSender:" destination="ma0-Gg-ZKQ" eventType="touchUpInside" id="oeG-90-jZo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uYW-Wo-ay8" firstAttribute="top" secondItem="0gg-4p-eH0" secondAttribute="bottom" constant="8" id="2H9-L7-eML"/>
+                            <constraint firstAttribute="trailing" secondItem="9gH-ys-RvL" secondAttribute="trailing" constant="16" id="GTu-cL-PAm"/>
+                            <constraint firstItem="9gH-ys-RvL" firstAttribute="leading" secondItem="f1T-E9-Cam" secondAttribute="leading" constant="16" id="Qbe-NA-iN3"/>
+                            <constraint firstItem="9gH-ys-RvL" firstAttribute="top" secondItem="2Cx-9S-64O" secondAttribute="bottom" constant="8" id="VKu-eI-jf9"/>
+                            <constraint firstItem="0gg-4p-eH0" firstAttribute="centerX" secondItem="f1T-E9-Cam" secondAttribute="centerX" id="auR-ui-U1G"/>
+                            <constraint firstItem="Y88-aj-gNW" firstAttribute="centerX" secondItem="f1T-E9-Cam" secondAttribute="centerX" id="cX2-HK-bWl"/>
+                            <constraint firstItem="Xuy-YF-K9U" firstAttribute="top" secondItem="Y88-aj-gNW" secondAttribute="bottom" constant="20" id="dpw-LE-VBA"/>
+                            <constraint firstItem="2Cx-9S-64O" firstAttribute="centerX" secondItem="f1T-E9-Cam" secondAttribute="centerX" id="nPy-lg-UWQ"/>
+                            <constraint firstItem="Y88-aj-gNW" firstAttribute="top" secondItem="uYW-Wo-ay8" secondAttribute="bottom" constant="8" id="psM-4Q-9rx"/>
+                            <constraint firstItem="0gg-4p-eH0" firstAttribute="top" secondItem="9gH-ys-RvL" secondAttribute="bottom" constant="8" id="ufh-IR-BpV"/>
+                            <constraint firstItem="2Cx-9S-64O" firstAttribute="top" secondItem="WBF-zm-QTC" secondAttribute="bottom" constant="20" id="yB0-NZ-4Ip"/>
+                            <constraint firstItem="uYW-Wo-ay8" firstAttribute="centerX" secondItem="f1T-E9-Cam" secondAttribute="centerX" id="zY0-b7-0g5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="9gH-ys-RvL" id="0Xn-ak-H6W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNi-yL-zVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="-610.34482758620697"/>
+        </scene>
+    </scenes>
+</document>

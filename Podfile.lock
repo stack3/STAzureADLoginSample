@@ -1,0 +1,34 @@
+PODS:
+  - ADAL (2.2.7):
+    - ADAL/app-lib (= 2.2.7)
+  - ADAL/app-lib (2.2.7):
+    - ADAL/tokencacheheader
+  - ADAL/tokencacheheader (2.2.7)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - NXOAuth2Client (1.2.8)
+
+DEPENDENCIES:
+  - ADAL (~> 2.2)
+  - AFNetworking (~> 3.1)
+  - NXOAuth2Client
+
+SPEC CHECKSUMS:
+  ADAL: d9bbf2c3f2ad17754178356937088b682a8a5c42
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  NXOAuth2Client: 98c4d4c594edd2b289cfc34a8928653e1dab7adf
+
+COCOAPODS: 0.39.0
