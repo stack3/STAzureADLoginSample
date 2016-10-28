@@ -20,11 +20,6 @@ class AzureGraphAPIClient: NSObject {
     func getToken(parent: UIViewController,
                   completionHandler completionBlock: @escaping ((ADUserInformation?, NSError?) -> Void)) {
         let config = AzureConfig.shared
-        if config.adUserInformation != nil {
-            completionBlock(config.adUserInformation, nil);
-            return;
-        }
-
         var error: ADAuthenticationError?
         let authContext = ADAuthenticationContext(
             authority: config.authority,

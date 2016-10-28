@@ -30,7 +30,7 @@ class AzureConfig: NSObject {
     /// OAuth認証のリダイレクトURL
     /// Info.plistのURL typesにも記述すること
     let redirectUriString = "stazureadloginsample://auth-callback"
-    var adUserInformation: ADUserInformation?
+    /// 認証で取得したアクセストークンの保持
     var accessToken: String?
 
     static var shared: AzureConfig {
